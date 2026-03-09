@@ -71,6 +71,10 @@ if (require("os").platform() === "linux") {
   
     const oldBitmapLoad = Bitmap.load;
     Bitmap.load = function (url) {
+      // Some plugins might eventually try decoding images from base64.
+      // This line below should avoid some issues.
+      if (/^(data:|blob:)/.test(url)) { return oldBitmapLoad(url); }
+      // Otherwise try loading image file from case insensitive paths.
       return (oldBitmapLoad(realpath(url).replace(cwd + "/", "")));
     };
   

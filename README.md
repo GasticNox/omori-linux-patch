@@ -1,6 +1,11 @@
 # omori-linux-patch
 
-A patch to make the OMORI RPG Maker MV Project (mostly) work on Linux
+A patch to make the OMORI RPG Maker MV Project (mostly) work on Linux.
+
+### Disclaimer
+
+This repository is a fork of [surrealegg/omori-linux-patch](https://github.com/surrealegg/omori-linux-patch).
+It includes a small fix to improve compatibility with certain plugins and mods.
 
 # Instructions
 
@@ -24,7 +29,7 @@ Upon completion, you should see a new folder created, which will look like this:
 
 ## 3. Add the Surrealegg_LinuxPatch.js Plugin to the Project
 
-Download the [Surrealegg_LinuxPatch.js](https://github.com/surrealegg/omori-linux-patch/blob/main/Surrealegg_LinuxPatch.js) plugin and save it in the following directory:
+Download the [Surrealegg_LinuxPatch.js](https://github.com/gasticnox/omori-linux-patch/blob/main/Surrealegg_LinuxPatch.js) plugin and save it in the following directory:
 `www_playtest_[random_id]/js/plugins`
 
 Now, open RPG Maker MV and access your project. Typically, it can be found here, but the location may vary depending on your distribution:
@@ -45,3 +50,16 @@ After saving your changes, you can run the game by pressing `Ctrl` + `R` or by s
 Happy Modding!
 
 ![Result](https://i.imgur.com/hqmNpxg.png)
+
+# Notes
+
+### If playtesting doesn't work/doesn't show up
+Try updating RPG Maker MV's copy of **NW.js** to a newer version.
+
+The one currently bundled with the program is old and often has issues running on modern Linux kernels.
+
+### Before bundling your mod...
+
+I would recommend disabling the plugin and removing this patch **before compiling and bundling your mod**.
+
+It shouldn't break on its own, but it could cause unexpected issues if certain mods are mixed. Also it's highly unnecessary if running the game natively on Windows or through Proton.
